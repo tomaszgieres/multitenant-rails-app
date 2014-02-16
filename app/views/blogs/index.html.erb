@@ -1,0 +1,11 @@
+All blogs:
+
+<ul>
+  <% @blogs.each do |blog| %>
+    <li>
+    <%# <%= link_to blog.name, url_for("#{blog.subdomain}.#{request.url}") %>
+    <%= link_to blog.name, "#{request.protocol}#{blog.subdomain}.#{request.host}" %>
+    <%= link_to blog.name, blog_url(blog) %>
+    </li>
+  <% end %>
+</ul>
